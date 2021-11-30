@@ -28,54 +28,14 @@
           <nav class="flex relative items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
             <div class="flex flex-1 items-center md:inset-y-0 md:left-0 md:absolute">
               <div class="flex w-full items-center justify-between md:w-auto">
-                <a href="#">
                   <span class="sr-only">Workflow</span>
                   <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
-                </a>
-                <div class="flex -mr-2 items-center md:hidden">
-                  <PopoverButton class="rounded-md bg-gray-50 p-2 text-gray-400 inline-flex items-center justify-center hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-inset focus:ring-2 focus:ring-indigo-500">
-                    <span class="sr-only">Open main menu</span>
-                    <MenuIcon class="h-6 w-6" aria-hidden="true" />
-                  </PopoverButton>
-                </div>
               </div>
             </div>
-            <div class="hidden md:flex md:space-x-10">
-              <a v-for="item in navigation" :key="item.name" :href="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</a>
-            </div>
             <div class="hidden md:flex md:inset-y-0 md:right-0 md:absolute md:items-center md:justify-end">
-              <span class="rounded-md shadow inline-flex">
-                <a href="#" class="bg-white border border-transparent rounded-md font-medium text-base py-2 px-4 text-indigo-600 inline-flex items-center hover:bg-gray-50">
-                  Home
-                </a>
-              </span>
             </div>
           </nav>
         </div>
-
-        <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-          <PopoverPanel focus class="p-2 transform origin-top-right inset-x-0 transition top-0 z-10 absolute md:hidden">
-            <div class="bg-white rounded-lg shadow-md ring-black ring-1 ring-opacity-5 overflow-hidden">
-              <div class="flex px-5 pt-4 items-center justify-between">
-                <div>
-                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
-                </div>
-                <div class="-mr-2">
-                  <PopoverButton class="bg-white rounded-md p-2 text-gray-400 inline-flex items-center justify-center hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-inset focus:ring-2 focus:ring-indigo-500">
-                    <span class="sr-only">Close menu</span>
-                    <XIcon class="h-6 w-6" aria-hidden="true" />
-                  </PopoverButton>
-                </div>
-              </div>
-              <div class="px-2 pt-2 pb-3">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" class="rounded-md font-medium text-base py-2 px-3 text-gray-700 block hover:bg-gray-50 hover:text-gray-900">{{ item.name }}</a>
-              </div>
-              <a href="#" class="font-medium bg-gray-50 text-center w-full py-3 px-5 text-indigo-600 block hover:bg-gray-100">
-                Log in
-              </a>
-            </div>
-          </PopoverPanel>
-        </transition>
       </Popover>
 
       <main class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
@@ -90,14 +50,14 @@
           </p>
           <div class="mx-auto max-w-md mt-5 sm:flex sm:justify-center md:mt-8">
             <div class="rounded-md shadow">
-              <a :href="href" class="border border-transparent rounded-md flex font-medium bg-indigo-600 text-base text-white w-full py-3 px-8 items-center justify-center md:text-lg md:py-4 md:px-10 hover:bg-indigo-700">
+              <router-link to="/" class="border border-transparent rounded-md flex font-medium bg-indigo-600 text-base text-white w-full py-3 px-8 items-center justify-center md:text-lg md:py-4 md:px-10 hover:bg-indigo-700">
                 {{ btn }}
-              </a>
+              </router-link>
             </div>
             <div class="rounded-md shadow mt-3 sm:mt-0 sm:ml-3">
-              <a :href="href2" class="bg-white border border-transparent rounded-md flex font-medium text-base w-full py-3 px-8 text-indigo-600 items-center justify-center md:text-lg md:py-4 md:px-10 hover:bg-gray-50">
+              <router-link to="/about" class="bg-white border border-transparent rounded-md flex font-medium text-base w-full py-3 px-8 text-indigo-600 items-center justify-center md:text-lg md:py-4 md:px-10 hover:bg-gray-50">
                 {{ btn2 }}
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -111,14 +71,12 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
+  { name: '', href: '#' },
 ]
 
 const title = "The Future"
 const title2 = "Is Now"
 const subtitle = "This is a page all about the future and the dreams we have for the life that we want to build"
-const btn = "Our Home"
-const href ="https://www.domain.com.au/2-3d-may-street-scarborough-wa-6019-2017337860"
-const btn2 = "Our Escape"
-const href2 = "https://www.carsales.com.au/cars/details/2021-ford-ranger-raptor-px-mkiii-auto-4x4-my21-25-double-cab/OAG-AD-20103606/?Cr=14"
+const btn = "Beach House"
+const btn2 = "Ranger Raptor"
 </script>

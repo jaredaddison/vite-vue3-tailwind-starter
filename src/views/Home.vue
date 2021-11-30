@@ -5,7 +5,9 @@ import MyFaq from '@/components/MyFaq.vue'
 </script>
 
 <template>
+<section>
   <HeroSection />
   <TheHouse />
   <MyFaq />
+</section>
 </template>
